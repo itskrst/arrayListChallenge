@@ -1,0 +1,71 @@
+package challenge;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+import ArrayList.Student;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		ArrayList<credentials> students = new ArrayList<credentials>();
+
+		Scanner s = new Scanner(System.in);
+		
+		System.out.print("Enter the number of students: ");
+		int numStudents = s.nextInt();
+		
+		s.nextLine();
+		
+		
+		for(int i = 0; i < numStudents; i++) {
+			System.out.println();
+			
+			System.out.println("- Enter details for student " + (i + 1) + " -");
+		
+		System.out.print("First Name: ");
+		String fName = s.nextLine();
+		
+		System.out.print("Last Name:  ");
+		String lName = s.nextLine();
+		
+		System.out.print("Age: ");
+		int old = s.nextInt();
+		
+		s.nextLine();
+		
+		System.out.print("Course: ");
+		String crs = s.nextLine();
+
+
+		System.out.print("Year: ");
+		String yr = s.nextLine();
+
+
+		System.out.print("Section: ");
+		String sc = s.nextLine();
+		
+		students.add(new credentials(fName, lName, crs, yr, sc, old));
+        System.out.println();
+        
+        System.out.print("Do you want to enter data for another student? (y/n): ");
+        String input = s.nextLine();
+        
+        if (!input.equalsIgnoreCase("y") || !input.equalsIgnoreCase("Y")) {
+            break; 
+        }
+    }
+		
+		for(credentials c : students) {
+			c.introduce();
+			
+		}
+		
+		s.close();
+
+		
+}
+	
+
+}
